@@ -1,7 +1,14 @@
 import "./App.css";
+import Navbar from "./Navbar";
+import Hero from "./Hero";
 
 function App() {
-  return <h1>hellos</h1>;
+  return (
+    <>
+      <Navbar />
+      <Hero />
+    </>
+  );
 }
 
 export default App;
