@@ -29,7 +29,7 @@ Hero
 ==========================================
  */
 .hero {
-  padding: 1rem;
+  padding: 4rem;
   display: grid;
   gap: 3rem;
   padding: 2.5rem;
@@ -37,7 +37,7 @@ Hero
 
 .hero-article {
   display: grid;
-  background: rgb(210, 221, 221);
+  background: rgba(234, 236, 240, 0.294);
   padding: 1rem;
   border-radius: 1rem;
   webkit-transition: all 0.5s 0s ease-in-out;
@@ -110,10 +110,30 @@ Footer
   justify-content: center;
   color: white;
   background: #010d25;
-  padding: 2rem 1rem;
+  padding: 2rem 0.5rem;
 }
 .cowin-href {
   padding-left: 0.5rem;
   text-decoration: none;
   color: white;
+}
+/* 
+=======================================
+
+Loading Section
+
+=======================================
+*/
+
+.loading-section {
+  padding: 5rem;
+  text-align: center;
+  height: 90vh;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+.loading-section-img {
+  max-width: 70vw;
+  max-height: 50vh;
 }
