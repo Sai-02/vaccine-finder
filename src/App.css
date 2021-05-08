@@ -94,6 +94,26 @@ Hero
 @media screen and (min-width: 900px) {
   .hero {
     gap: 15rem;
-    padding: 5rem 4rem;
+    padding: 5rem 6rem;
   }
+}
+
+/* 
+================================================
+
+Footer
+
+================================================
+*/
+.footer {
+  display: flex;
+  justify-content: center;
+  color: white;
+  background: #010d25;
+  padding: 2rem 1rem;
+}
+.cowin-href {
+  padding-left: 0.5rem;
+  text-decoration: none;
+  color: white;
 }
