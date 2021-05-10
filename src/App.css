@@ -40,7 +40,7 @@ Hero
   background: rgba(234, 236, 240, 0.294);
   padding: 1rem;
   border-radius: 1rem;
-  webkit-transition: all 0.5s 0s ease-in-out;
+  -webkit-transition: all 0.5s 0s ease-in-out;
   -moz-transition: all 0.5s 0s ease-in-out;
   -o-transition: all 0.5s 0s ease-in-out;
   transition: all 0.5s 0s ease-in-out;
@@ -111,6 +111,7 @@ Footer
   color: white;
   background: #010d25;
   padding: 2rem 0.5rem;
+  /* margin-top: 20rem */
 }
 .cowin-href {
   padding-left: 0.5rem;
@@ -147,7 +148,7 @@ Vaccine Centers
  */
 .vaccine-centers-container {
   min-height: 90vh;
-  max-height: 100vh;
+  /* max-height: 100vh; */
 }
 .vaccine-centers {
   /* height: 90vh; */
@@ -157,6 +158,7 @@ Vaccine Centers
   align-items: center;
   justify-content: center;
   gap: 2rem;
+  padding-bottom: 0rem;
 }
 .vaccine-centers h2 {
   text-transform: capitalize;
@@ -261,4 +263,63 @@ Vaccine Centers
 }
 .district-search-btn-container {
   padding-top: 2rem;
+}
+/*
+===========================================
+
+Response Error Section
+
+==========================================
+ */
+
+.response-error-section {
+  text-align: center;
+}
+.response-error-section h3 {
+  margin-bottom: 1rem;
+}
+/*
+===============================================
+
+Response Section
+
+===============================================
+ */
+.response-section {
+  text-align: center;
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+.slots-not-found-img {
+  width: 30vw;
+  height: 30vw;
+}
+.slots-not-found-img-container {
+  /* padding: 1rem; */
+  text-align: center;
+}
+.filter-btns {
+  display: flex;
+  justify-content: center;
+  max-width: 100vw;
+  overflow: hidden;
+
+  padding: 0.5rem;
+  display: none;
+  align-items: center;
+}
+.filter-btn {
+  list-style: none;
+  margin: 0 2rem;
+  padding: 0.5rem;
+  border: 1px solid #002060;
+  align-self: center;
+}
+.filter-btn:hover {
+  cursor: pointer;
+}
+@media screen and (min-width: 800px) {
+  .filter-btns {
+    display: flex;
+  }
 }

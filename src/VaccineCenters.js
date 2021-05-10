@@ -6,9 +6,11 @@ import Response from "./components/Response";
 const VaccineCenters = () => {
   const [isPin, setIsPin] = useState(true);
   const [districts, setDistricts] = useState([]);
-  const [search, isSearch] = useState(false);
+  const [isSearch, setIsSearch] = useState(false);
   const [pinInput, setPinInput] = useState("");
   const [districtInput, setDistrictInput] = useState("");
+  const [isError, setIsError] = useState(false);
+  const [response, setResponse] = useState([]);
   const findDistricts = async (e) => {
     let state = states.find((state) => {
       return e.target.value === state.state_name;
@@ -29,8 +31,14 @@ const VaccineCenters = () => {
     let districtID = districts.find((district) => {
       return district.district_name === districtInput;
     }).district_id;
-    let response = await getResponseForDistrict(districtID);
-    console.log(response);
+    try {
+      let response = await getResponseForDistrict(districtID);
+      setResponse(response.centers);
+      console.log(response);
+    } catch (e) {
+      setIsError(true);
+    }
+    setIsSearch(true);
   };
   const getResponseForDistrict = async (id) => {
     let d = new Date();
@@ -43,8 +51,14 @@ const VaccineCenters = () => {
   };
   const handleSubmitForPin = async (e) => {
     e.preventDefault();
-    let response = await getResponseForPin();
-    console.log(response);
+    try {
+      let response = await getResponseForPin();
+      setResponse(response.centers);
+      console.log(response);
+    } catch (e) {
+      setIsError(true);
+    }
+    setIsSearch(true);
   };
   const getResponseForPin = async () => {
     let d = new Date();
@@ -150,7 +164,7 @@ const VaccineCenters = () => {
           </div>
         )}
       </section>
-      {isSearch ? <Response /> : <></>}
+      {isSearch ? <Response Error={isError} response={response} /> : <></>}
     </div>
   );
 };
