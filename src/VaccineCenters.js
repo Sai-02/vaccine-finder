@@ -1,10 +1,14 @@
 import React from "react";
 import { useState } from "react";
 import { states } from "./components/states";
+import Response from "./components/Response";
 
 const VaccineCenters = () => {
   const [isPin, setIsPin] = useState(true);
   const [districts, setDistricts] = useState([]);
+  const [search, isSearch] = useState(false);
+  const [pinInput, setPinInput] = useState("");
+  const [districtInput, setDistrictInput] = useState("");
   const findDistricts = async (e) => {
     let state = states.find((state) => {
       return e.target.value === state.state_name;
@@ -12,7 +16,6 @@ const VaccineCenters = () => {
     console.log(state);
     let districtList = await getDistrictList(state);
     setDistricts(districtList.districts);
-    console.log(districts);
   };
   const getDistrictList = async (state) => {
     let districtList = await fetch(
@@ -21,8 +24,36 @@ const VaccineCenters = () => {
     let districtsListJson = await districtList.json();
     return await districtsListJson;
   };
-  const handleSubmit = (e) => {
+  const handleSubmitForDistrict = async (e) => {
     e.preventDefault();
+    let districtID = districts.find((district) => {
+      return district.district_name === districtInput;
+    }).district_id;
+    let response = await getResponseForDistrict(districtID);
+    console.log(response);
+  };
+  const getResponseForDistrict = async (id) => {
+    let d = new Date();
+    let date = `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`;
+    let rawResponse = await fetch(
+      `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByDistrict?district_id=${id}&date=${date}`
+    );
+    let response = await rawResponse.json();
+    return response;
+  };
+  const handleSubmitForPin = async (e) => {
+    e.preventDefault();
+    let response = await getResponseForPin();
+    console.log(response);
+  };
+  const getResponseForPin = async () => {
+    let d = new Date();
+    let date = `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`;
+    let rawResponse = await fetch(
+      `https://cdn-api.co-vin.in/api/v2/appointment/sessions/public/calendarByPin?pincode=${pinInput}&date=${date}`
+    );
+    let response = await rawResponse.json();
+    return response;
   };
 
   return (
@@ -53,15 +84,17 @@ const VaccineCenters = () => {
         </div>
         {isPin ? (
           <div className="pin-search">
-            <form className="pin-search-form">
+            <form className="pin-search-form" onSubmit={handleSubmitForPin}>
               <input
                 type="text"
+                value={pinInput}
                 placeholder="Enter your pin"
                 className="pin-search-input"
+                onInput={(e) => setPinInput(e.target.value)}
               />
 
               <div className="pin-search-btn-container">
-                <button className="search-btn" onClick={handleSubmit}>
+                <button className="search-btn" type="submit">
                   Search
                 </button>
               </div>
@@ -69,7 +102,10 @@ const VaccineCenters = () => {
           </div>
         ) : (
           <div className="district-search">
-            <form className="district-search-form">
+            <form
+              className="district-search-form"
+              onSubmit={handleSubmitForDistrict}
+            >
               <div className="select-state-container">
                 <label>Select State</label>
                 <select
@@ -89,7 +125,10 @@ const VaccineCenters = () => {
               </div>
               <div className="select-district-container">
                 <label>district</label>
-                <select name="districts">
+                <select
+                  name="districts"
+                  onInput={(e) => setDistrictInput(e.target.value)}
+                >
                   {districts.map((district) => {
                     return (
                       <option value={district.district_name}>
@@ -102,7 +141,7 @@ const VaccineCenters = () => {
               <div className="district-search-btn-container">
                 <button
                   className="search-btn district-search-btn"
-                  onClick={handleSubmit}
+                  type="submit"
                 >
                   Search
                 </button>
@@ -111,6 +150,7 @@ const VaccineCenters = () => {
           </div>
         )}
       </section>
+      {isSearch ? <Response /> : <></>}
     </div>
   );
 };
