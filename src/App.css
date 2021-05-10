@@ -137,3 +137,128 @@ Loading Section
   max-width: 70vw;
   max-height: 50vh;
 }
+
+/*
+=========================================
+
+Vaccine Centers
+
+=========================================
+ */
+.vaccine-centers-container {
+  min-height: 90vh;
+  max-height: 100vh;
+}
+.vaccine-centers {
+  /* height: 90vh; */
+  padding: 4rem;
+  text-align: center;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+}
+.vaccine-centers h2 {
+  text-transform: capitalize;
+  color: #ad0948;
+  font-size: 2rem;
+}
+@media screen and (min-width: 800px) {
+  .vaccine-centers h2 {
+    font-size: 3rem;
+  }
+}
+.vaccine-centers-btn {
+  font-size: 1rem;
+  border: none;
+  background: rgb(169, 215, 233);
+  padding: 0.5rem 1rem;
+  width: 7rem;
+  transition: all 0.1s ease-in-out;
+}
+.vaccine-centers-btn:hover {
+  cursor: pointer;
+}
+.vaccine-centers-btn-clicked {
+  cursor: pointer;
+  background: #002060;
+  color: white;
+}
+@media screen and (min-width: 800px) {
+  .vaccine-centers-btn {
+    font-size: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    width: 10rem;
+  }
+}
+.pin-search-form {
+  display: grid;
+  gap: 1rem;
+}
+.pin-search {
+  padding: 1rem;
+}
+.pin-search-input {
+  font-size: 1.2rem;
+  padding: 8px;
+  border: none;
+  border: 1.4px solid black;
+  border-radius: 1rem;
+}
+.pin-search-input:focus {
+  outline: none;
+}
+.search-btn {
+  border: none;
+  background: transparent;
+  background: #002060;
+  color: white;
+  padding: 0.5rem 1rem;
+}
+.search-btn:hover {
+  cursor: pointer;
+}
+.district-search-form {
+  display: grid;
+}
+.select-state-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+.select-state-container label {
+  font-size: 1rem;
+  color: #600000;
+  align-self: center;
+}
+.select-state-container select {
+  padding: 0.23rem;
+  background: rgb(87, 83, 136);
+  color: white;
+}
+.select-state-container option {
+  color: whitesmoke;
+  padding: 0.5rem;
+}
+.select-district-container {
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 1rem;
+}
+.select-district-container label {
+  justify-self: start;
+  text-transform: capitalize;
+  font-size: 1rem;
+  color: #600000;
+  align-self: center;
+}
+.select-district-container select {
+  padding: 0.23rem;
+  background: rgb(87, 83, 136);
+  color: white;
+}
+.district-search-btn-container {
+  padding-top: 2rem;
+}
