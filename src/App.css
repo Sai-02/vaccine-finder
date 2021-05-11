@@ -115,7 +115,7 @@ Footer
 }
 .cowin-href {
   padding-left: 0.5rem;
-  text-decoration: none;
+  text-decoration: underline;
   color: white;
 }
 /* 

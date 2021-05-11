@@ -3,13 +3,23 @@ import slotsNotFound from "../images/slotsNotFound.jpg";
 import { useState } from "react";
 
 const Response = ({ Error, response }) => {
-  console.log(Error, response);
+  // console.log(Error, responseValid);
   const [isClicked18, setIsClicked18] = useState(false);
   const [isClicked45, setIsClicked45] = useState(false);
   const [isClickedCovishield, setIsClickedCovishield] = useState(false);
   const [isClickedCovaxin, setIsClickedCovaxin] = useState(false);
   const [isClickedPaid, setIsClickedPaid] = useState(false);
   const [isClickedFree, setIsClickedFree] = useState(false);
+  // const [response, setResponse] = useState(responseValid);
+  // Filtering response
+  // const filterResponse = () => {
+  //   let val = responseValid;
+  //   if (isClickedFree) {
+  //     let k = val.filter((singleVal) => singleVal.fee_type === "Free");
+  //     setResponse(val);
+  //   }
+  // };
+  // filterResponse();
   let d = new Date();
   let date = `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`;
   const getUpdatedDate = (increment) => {
