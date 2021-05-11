@@ -289,6 +289,9 @@ Response Section
   text-align: center;
   padding-bottom: 2rem;
   padding-top: 2rem;
+  max-width: 100vw;
+  overflow: visible;
+  /* overflow:hidden */
 }
 .slots-not-found-img {
   width: 30vw;
@@ -321,5 +324,43 @@ Response Section
 @media screen and (min-width: 800px) {
   .filter-btns {
     display: flex;
+  }
+}
+.filter-btn-clicked {
+  background: #002060;
+  color: white;
+}
+/*
+==================================================
+
+Response Table
+
+=================================================
+ */
+.table-headings,
+.table-row {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  /* gap: 4rem; */
+  gap: 0;
+}
+.table-heading,
+.table-col {
+  width: 8rem;
+  height: 8rem;
+  border: 1px solid #002060;
+  overflow: hidden;
+}
+.response-table {
+  max-width: 100vw;
+  overflow-x: scroll;
+}
+
+@media screen and (min-width: 800px) {
+  .response-table::-webkit-scrollbar {
+    display: none;
+  }
+  .response-table {
+    scrollbar-width: none;
   }
 }

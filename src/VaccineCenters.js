@@ -54,7 +54,6 @@ const VaccineCenters = () => {
     try {
       let response = await getResponseForPin();
       setResponse(response.centers);
-      console.log(response);
     } catch (e) {
       setIsError(true);
     }
