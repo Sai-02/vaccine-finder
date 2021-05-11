@@ -3,7 +3,13 @@ import React from "react";
 const Navbar = () => {
   return (
     <div className="navbar">
-      <h2>Vaccine finder</h2>
+      <span
+        onClick={() => {
+          window.location.reload();
+        }}
+      >
+        Vaccine finder
+      </span>
     </div>
   );
 };

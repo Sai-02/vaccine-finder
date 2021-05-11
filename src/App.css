@@ -20,6 +20,13 @@ Navbar
   font-family: Cochin, Georgia, Times, "Times New Roman", serif;
   font-size: 1rem;
 }
+.navbar span {
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+.navbar span:hover {
+  cursor: pointer;
+}
 
 /* 
 ==========================================
