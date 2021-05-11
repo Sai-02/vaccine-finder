@@ -28,14 +28,14 @@ const Response = ({ Error, response }) => {
     let slot = sessions.find((session) => session.date === date);
     // console.log(slot);
     if (typeof slot === "undefined") {
-      return <p>NA</p>;
+      return <p className="no-slot">NA</p>;
     } else {
       return (
-        <>
-          <p>{slot.available_capacity}</p>
-          <p>{slot.min_age_limit}+</p>
-          <p>{slot.vaccine}</p>
-        </>
+        <div className="slot-details">
+          <p className="slot-capacity">{slot.available_capacity}</p>
+          <p className="age-limit">{slot.min_age_limit}+</p>
+          <p className="vaccine-type">{slot.vaccine}</p>
+        </div>
       );
     }
   };
@@ -127,9 +127,13 @@ const Response = ({ Error, response }) => {
                   return (
                     <div className="table-row">
                       <div className="table-col">
-                        <p>{singleResponse.name} </p>
-                        <p>{singleResponse.fee_type}</p>
-                        <p>{singleResponse.pincode}</p>
+                        <div className="hospital-name-cost-container">
+                          <p className="hospital-name">
+                            {singleResponse.name}{" "}
+                          </p>
+                          <p className="cost">{singleResponse.fee_type}</p>
+                          {/* <p>{singleResponse.pincode}</p> */}
+                        </div>
                       </div>
                       <div className="table-col">
                         {getSlotsInfo(0, singleResponse.sessions)}
