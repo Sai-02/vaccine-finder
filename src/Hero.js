@@ -4,13 +4,11 @@ import Certificate from "./Certificate";
 import VaccineCenters from "./VaccineCenters";
 import vaccine from "./images/vaccine.jpeg";
 import vaccineCertificate from "./images/vaccine_certificate.jpeg";
-import loadingImg from "./images/loading.gif";
 
 const Hero = () => {
-  const [loading, setLoading] = useState(false);
   const [showVaccine, setShowVaccine] = useState(false);
   const [showCertificate, setShowCertificate] = useState(false);
-  if (showVaccine == false && showCertificate == false && loading == false) {
+  if (showVaccine == false && showCertificate == false) {
     return (
       <section className="hero">
         <article className="showVaccine hero-article">
@@ -30,11 +28,7 @@ const Hero = () => {
             <button
               className="hero-article-btn"
               onClick={() => {
-                setLoading(true);
-                setInterval(() => {
-                  setLoading(false);
-                  setShowVaccine(true);
-                }, 1000);
+                setShowVaccine(true);
               }}
             >
               Find
@@ -58,23 +52,13 @@ const Hero = () => {
             <button
               className="hero-article-btn"
               onClick={() => {
-                setLoading(true);
-                setInterval(() => {
-                  setLoading(false);
-                  setShowCertificate(true);
-                }, 1000);
+                setShowCertificate(true);
               }}
             >
               Download
             </button>
           </div>
         </article>
-      </section>
-    );
-  } else if (loading) {
-    return (
-      <section className="loading-section">
-        <img src={loadingImg} alt="" className="loading-section-img" />
       </section>
     );
   }
