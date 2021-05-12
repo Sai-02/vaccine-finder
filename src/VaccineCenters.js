@@ -28,6 +28,12 @@ const VaccineCenters = () => {
   };
   const handleSubmitForDistrict = async (e) => {
     e.preventDefault();
+    if (districts.length == 0) {
+      return;
+    }
+    if (districtInput === "") {
+      return;
+    }
     let districtID = districts.find((district) => {
       return district.district_name === districtInput;
     }).district_id;

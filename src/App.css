@@ -44,13 +44,16 @@ Hero
 
 .hero-article {
   display: grid;
-  background: rgba(234, 236, 240, 0.294);
+  background: rgba(254, 255, 255, 0.911);
   padding: 1rem;
   border-radius: 1rem;
   -webkit-transition: all 0.5s 0s ease-in-out;
   -moz-transition: all 0.5s 0s ease-in-out;
   -o-transition: all 0.5s 0s ease-in-out;
   transition: all 0.5s 0s ease-in-out;
+  box-shadow: -2px 0px 24px -1px rgba(236, 233, 233, 0.97);
+  -webkit-box-shadow: -2px 0px 24px -1px rgba(114, 114, 114, 0.97);
+  -moz-box-shadow: -2px 0px 24px -1px rgba(114, 114, 114, 0.97);
 }
 .hero-article:hover {
   transform: scale(1.04);

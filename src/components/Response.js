@@ -3,23 +3,12 @@ import slotsNotFound from "../images/slotsNotFound.jpg";
 import { useState } from "react";
 
 const Response = ({ Error, response }) => {
-  // console.log(Error, responseValid);
-  const [isClicked18, setIsClicked18] = useState(false);
-  const [isClicked45, setIsClicked45] = useState(false);
-  const [isClickedCovishield, setIsClickedCovishield] = useState(false);
-  const [isClickedCovaxin, setIsClickedCovaxin] = useState(false);
-  const [isClickedPaid, setIsClickedPaid] = useState(false);
-  const [isClickedFree, setIsClickedFree] = useState(false);
-  // const [response, setResponse] = useState(responseValid);
-  // Filtering response
-  // const filterResponse = () => {
-  //   let val = responseValid;
-  //   if (isClickedFree) {
-  //     let k = val.filter((singleVal) => singleVal.fee_type === "Free");
-  //     setResponse(val);
-  //   }
-  // };
-  // filterResponse();
+  try {
+    let length = response.length;
+  } catch (e) {
+    Error = true;
+  }
+
   let d = new Date();
   let date = `${d.getDate()}-${d.getMonth()}-${d.getFullYear()}`;
   const getUpdatedDate = (increment) => {
@@ -72,56 +61,6 @@ const Response = ({ Error, response }) => {
             </>
           ) : (
             <article className="response">
-              <ul className="filter-btns">
-                <li
-                  className={`filter-btn ${
-                    isClicked18 ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClicked18(!isClicked18)}
-                >
-                  Age 18+
-                </li>
-                <li
-                  className={`filter-btn ${
-                    isClicked45 ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClicked45(!isClicked45)}
-                >
-                  Age 45+
-                </li>
-                <li
-                  className={`filter-btn ${
-                    isClickedCovishield ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClickedCovishield(!isClickedCovishield)}
-                >
-                  Covishield
-                </li>
-                <li
-                  className={`filter-btn ${
-                    isClickedCovaxin ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClickedCovaxin(!isClickedCovaxin)}
-                >
-                  Covaxin
-                </li>
-                <li
-                  className={`filter-btn ${
-                    isClickedPaid ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClickedPaid(!isClickedPaid)}
-                >
-                  Paid
-                </li>
-                <li
-                  className={`filter-btn ${
-                    isClickedFree ? "filter-btn-clicked" : " "
-                  }`}
-                  onClick={() => setIsClickedFree(!isClickedFree)}
-                >
-                  Free
-                </li>
-              </ul>
               <div className="response-table">
                 <div className="table-headings">
                   <div className="table-heading">Center Name and details</div>
