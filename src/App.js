@@ -1,8 +1,8 @@
 import "./App.css";
-import Navbar from "./Navbar";
+import Navbar from "./components/Navbar";
 import Hero from "./Hero";
-import Footer from "./Footer";
-import VaccineCenters from "./VaccineCenters";
+import Footer from "./components/Footer";
+import VaccineCenters from "./components/VaccineCenters";
 
 function App() {
   return (

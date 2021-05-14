@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
-import { states } from "./components/states";
-import Response from "./components/Response";
+import { states } from "./states";
+import Response from "./Response";
 
 const VaccineCenters = () => {
   const [isPin, setIsPin] = useState(true);
