@@ -1,6 +1,5 @@
 import React from "react";
 import slotsNotFound from "../images/slotsNotFound.jpg";
-import { useState } from "react";
 
 const Response = ({ Error, response }) => {
   try {
