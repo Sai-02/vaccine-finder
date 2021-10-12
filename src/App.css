@@ -14,7 +14,7 @@ Navbar
 .navbar {
   text-align: center;
   padding: 1.2rem;
-  background: #002060;
+  background: #34717b;
   color: white;
   letter-spacing: 2px;
   font-family: Cochin, Georgia, Times, "Times New Roman", serif;
@@ -183,6 +183,7 @@ Vaccine Centers
 .vaccine-centers-btn {
   font-size: 1rem;
   border: none;
+  border-radius: 40px;
   background: rgb(169, 215, 233);
   padding: 0.5rem 1rem;
   width: 7rem;
@@ -222,6 +223,7 @@ Vaccine Centers
 }
 .search-btn {
   border: none;
+  border-radius: 10px;
   background: transparent;
   background: #002060;
   color: white;
