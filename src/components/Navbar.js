@@ -8,7 +8,7 @@ const Navbar = () => {
           window.location.reload();
         }}
       >
-        Vaccine finder
+        VACCINE FINDER
       </span>
     </div>
   );
