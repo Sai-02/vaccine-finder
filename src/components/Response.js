@@ -19,10 +19,12 @@ const Response = ({ Error, response }) => {
   const getSlotsInfo = (increment, sessions) => {
     let rawdate = new Date();
     rawdate.setDate(rawdate.getDate() + increment);
-    let date = `${rawdate.getDate()}-${
+    let date = `${
+      rawdate.getDate() > 9 ? rawdate.getDate() : "0" + rawdate.getDate()
+    }-${
       rawdate.getMonth() > 9 ? rawdate.getMonth() : "0" + rawdate.getMonth()
     }-${rawdate.getFullYear()}`;
-
+    console.log(date);
     let slot = sessions.find((session) => session.date === date);
     // console.log(slot);
     if (typeof slot === "undefined") {
