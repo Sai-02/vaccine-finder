@@ -3,7 +3,7 @@
 Via this web app you can see vaccine slots available in your area by just giving your pin code or district.
 
 ## Tech Used
-**React.js, Sass**
+**React.js, CSS**
 
 ## Live Demo
 This site is hosted [here](https://vaccine-finder-sai.netlify.app/)
@@ -19,7 +19,3 @@ This site is hosted [here](https://vaccine-finder-sai.netlify.app/)
 
 
 ![Screenshot (649)](https://user-images.githubusercontent.com/56087847/162923976-1aadcd9c-a02a-437a-a6c5-07109b216456.png)
-
-
-
-
